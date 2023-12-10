@@ -28,4 +28,19 @@ async function generateLogo() {
         name: 'shapeColor',
         message: 'Enter shape color (color keyword or hexadecimal)'
     })
+
+    const svgContent = svgBuilder({
+        width: 300,
+        height: 200,
+        elements: [
+            { type: 'text', content: text, x:150, y: 150, fill: textColor },
+            { type: selectedShapes, x:150, y:150, size:50, fill, shapeColor }
+        ]
+    })
+
+    fs.writeFileSync('dist/logo.svg', svgContent)
+
+    console.log('Generated logo.svg')
 }
+
+generateLogo()
