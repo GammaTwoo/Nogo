@@ -25,7 +25,7 @@ async function promptUser() {
       type: 'input',
       name: 'shapeColor',
       message: 'Enter shape color (keyword or hexadecimal):',
-    },
+    }
   ]);
 
   return userInput
